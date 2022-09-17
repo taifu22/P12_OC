@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles/style.scss';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import NavBar from './components/NavBar';
+import Home from './pages/Home';
+import Erreur_404 from './pages/Erreur_404'
+import NavBar2 from './components/NavBar2';
 
 function App() {
+  let dataUser = '/:userId';
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{position:'relative'}} className="App">
+      <NavBar />
+      <BrowserRouter>
+      <NavBar2 />
+          <Routes>
+              <Route path={'/'} exact element={<Home />}/>
+              <Route path={dataUser} exact element={<Home />}/>
+              <Route path='*' element={<Erreur_404 />}/> 
+          </Routes>
+        </BrowserRouter>  
     </div>
   );
 }

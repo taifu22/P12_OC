@@ -1,0 +1,49 @@
+ .div-energy {
+    width: auto;
+    height: 80px;
+    background: #FBFBFB;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+    margin-bottom:20px;
+    font-family: 'Roboto';
+    font-style: normal;
+    border-radius: 5px;
+    padding: 25px;
+    display: flex;
+    .image-energy { 
+        width: 80px;
+        height: 80px;
+        margin-right: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+    }
+    .infos-energy {
+        .p-bold {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+            margin: 0;
+            margin-top: 20px;
+        }
+        p {
+            margin: 0;
+        }
+    }
+ }
+
+ @media screen and (max-width: 1024px){
+    .div-energy {
+        width: 170px;
+        height: 70px;
+        .image-energy {
+            width: 70px;
+            height: auto;
+        }
+        .infos-energy {
+            .p-bold {
+                width: 68px;
+            }
+        }
+    }
+}

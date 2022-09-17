@@ -1,0 +1,34 @@
+.div-score {
+    position: relative;
+    @include component;
+    background-color: #FBFBFB;
+    p {
+        position: absolute;
+        left: 20px;
+    }
+    .div-resultat-score {
+        position: absolute;
+        top: 30%;
+        left: 30%;
+        .p-result-score {
+            position: absolute;
+            left: 23px;
+            font-weight: bold;
+            font-size: 25px;
+        }
+        .p-text-score {
+            width: 70px;
+            position: absolute;
+            top: 35px;
+        }    
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .div-score {
+        p {
+            top: -10px;
+            left: 10px;
+        }
+    }
+}

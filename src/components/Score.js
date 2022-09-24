@@ -1,12 +1,13 @@
 import React from 'react'; 
 import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
+import PropTypes from 'prop-types';
 
 function Score(props) {
-    //console.log(props.data);
 
+    //console.log(props.data);
     const pieData = [
-        { name: "completed", value: props.data.todayScore, fillColor: "#ff0101" },
-        { name: "not-completed", value: 1 - props.data.todayScore, fillColor: "transparent" },
+        { name: "completed", value: (props.data.todayScore ? props.data.todayScore : props.data.score), fillColor: "#ff0101" },
+        { name: "not-completed", value: 1 - (props.data.todayScore ? props.data.todayScore : props.data.score), fillColor: "transparent" },
     ];
 
     return (
@@ -16,7 +17,7 @@ function Score(props) {
                 <PieChart width={730} height={250}
                 outerRadius={window.innerWidth > 1340 ? "80%" : "60%"}>
                     <Pie 
-                        data={pieData}
+                        data={pieData} 
                         dataKey="value"
                         innerRadius={70}
                         outerRadius={80}
@@ -34,7 +35,7 @@ function Score(props) {
                 </PieChart>
             </ResponsiveContainer>
             <div className='div-resultat-score'>
-                <p className='p-result-score'>{`${100 * props.data.todayScore}%`}</p>
+                <p className='p-result-score'>{`${100 * (props.data.todayScore ? props.data.todayScore : props.data.score)}%`}</p>
                 <br />
                 <p className='p-text-score'>de votre objectif</p>
                 <br />
@@ -45,3 +46,7 @@ function Score(props) {
 
 //Score.proptypes
 export default Score;
+
+Score.propTypes = {
+    data: PropTypes.object.isRequired
+}

@@ -2,7 +2,7 @@ import './styles/style.scss';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Home from './pages/Home';
-import Erreur_404 from './pages/Erreur_404'
+import Erreur_404 from './pages/Erreur_404';
 import NavBar2 from './components/NavBar2';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
   return (
     <div style={{position:'relative'}} className="App">
       <NavBar />
-      <BrowserRouter>
+      <BrowserRouter> 
       <NavBar2 />
           <Routes>
               <Route path={'/'} exact element={<Home />}/>
@@ -20,6 +20,6 @@ function App() {
         </BrowserRouter>  
     </div>
   );
-}
+} 
 
 export default App;

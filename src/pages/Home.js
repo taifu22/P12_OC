@@ -8,29 +8,38 @@ import fire from '../assets/fire.png';
 import chicken from '../assets/chicken.png';
 import apple from '../assets/apple.png';
 import hamburger from '../assets/hamburger.png';
-//import { useParams } from 'react-router-dom';
-//import {getUserMainData} from '../dataApi';
-import FormatDataApi from '../formatDataApi';
-
+import { useParams } from 'react-router-dom'; 
+import Erreur_404 from '../pages/Erreur_404';
+import {getUserMainData} from '../dataApi';
+import { useEffect } from 'react';
+import { useState } from 'react';
+ 
 function Home() {
-    
-    // let {userId} = useParams();
 
-    // if (userId === undefined) {  
-    //     userId = 12;
-    // }
+    let {userId} = useParams();
+    if (userId === undefined) {
+        userId = 12;
+    }
+    const [data1, setData1] = useState()
+    let data2;
 
-    // let data = getUserMainData().find(item => {
-    //     if (userId == item.id) {
-    //         return item
-    //     }
-    // })
-    let data = FormatDataApi('home');
+    useEffect(()=>{
+        async function fetchData() {
+            setData1(await getUserMainData(userId))
+        }
+        fetchData();
+    },[])
+
+    if (data1 != undefined) {
+        data2 = '1';
+    }
+
     return (
+        data1 ?
         <div className='div-home'>
-            <div className='div-home-center'>
+            <div className='div-home-center'> 
                 <div className='home-title'>
-                    <h1>Bonjour {data.userInfos.firstName}</h1>
+                    <h1>Bonjour {data1.userInfos.firstName}</h1>
                     <p>Félicitations ! Vous avez explosé vos objectifs hier</p>
                 </div>
                 <div className='center-home'>
@@ -39,16 +48,16 @@ function Home() {
                 <div className='center-bottom-home'>
                     <Session />
                     <Intensity />
-                    <Score data={data} />
+                    <Score data={data1} />
                 </div>
             </div>
             <div className='div-home-right'>
-                <Energy image={fire} item={'Calories'} bgColor={'rgb(255, 0, 0, 0.1)'} data={data.keyData.calorieCount+'kcal'} />
-                <Energy image={chicken} item={'Proteines'} bgColor={'rgba(74, 184, 255, 0.1)'} data={data.keyData.proteinCount+'g'}/>
-                <Energy image={apple} item={'Glucides'} bgColor={'rgb(249, 206, 35, 0.1)'} data={data.keyData.carbohydrateCount+'g'}/>
-                <Energy image={hamburger} item={'Lipides'} bgColor={'rgba(253, 81, 129, 0.1)'} data={data.keyData.lipidCount+'g'}/>
+                <Energy image={fire} item={'Calories'} bgColor={'rgb(255, 0, 0, 0.1)'} data={data1.keyData.calorieCount+'kcal'} />
+                <Energy image={chicken} item={'Proteines'} bgColor={'rgba(74, 184, 255, 0.1)'} data={data1.keyData.proteinCount+'g'}/>
+                <Energy image={apple} item={'Glucides'} bgColor={'rgb(249, 206, 35, 0.1)'} data={data1.keyData.carbohydrateCount+'g'}/>
+                <Energy image={hamburger} item={'Lipides'} bgColor={'rgba(253, 81, 129, 0.1)'} data={data1.keyData.lipidCount+'g'}/>
             </div>  
-        </div>
+        </div> : data2 =='1' && <Erreur_404 />
     ); 
 }
 

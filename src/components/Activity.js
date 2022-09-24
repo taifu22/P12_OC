@@ -1,34 +1,15 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-//import {getUserActivity} from '../dataApi';
-//import { useParams } from 'react-router-dom';
 import FormatDataApi from '../formatDataApi';
 
 export default function Activity() {
 
-      // let {userId} = useParams();
-
-      // if (userId === undefined) {
-      //   userId = 12;
-      // }
- 
-      // let data = getUserActivity().find(item => {
-      //     if (userId == item.userId) {
-      //         return item
-      //     }
-      // })    
-
-      // let newArray = data.sessions.map(item => {
-      //   let day = item.day.replace('2020-', "");
-      //   item.day = day
-      //   return item 
-      // })
-
       let data = FormatDataApi('activity');
+      //console.log(data);
 
-      function CustomTooltip({active, payload}) {
+      function CustomTooltip({active, payload}) { 
         if (active && payload) {
-          return (
+          return ( 
             <div className='tooltip'>
               <div className='tooltip-red'>
                 {`${payload[0].value} kg`} 
@@ -37,7 +18,7 @@ export default function Activity() {
                 {`${payload[1].value} kCal`}
               </div>
             </div>
-          );
+          ); 
         }
       
         return null;

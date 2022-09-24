@@ -1,25 +1,28 @@
-import {getUserPerformance, getUserAverageSessions, getUserMainData, getUserActivity} from './dataApi';
+import {getUserPerformance, getUserAverageSessions, getUserActivity} from './dataApi';
 import { useParams } from 'react-router-dom'; 
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 export default function FormatDataApi(data) {
 
     let {userId} = useParams();
-    if (userId === undefined) {
-      userId = 12;
-    }
+    const [performanceData, setPerformanceData] = useState();
+    const [averageSessions, setAverageSessions] = useState();
+    const [activityData, setActivityData] = useState();
 
-    let dataintensity;
-    let datasession;
-    let datahome;
-    let dataActivity;
-    
-    if (data == 'intensity') {
-        getUserPerformance().find(item => {
-            if (userId == item.userId) {
-                dataintensity = item
-                return dataintensity
-            }
-        })
+    useEffect(()=>{
+        if (userId === undefined) {
+            userId = 12;
+        }
+        async function fetchData() {
+            setPerformanceData(await getUserPerformance(userId));
+            setAverageSessions(await getUserAverageSessions(userId));
+            setActivityData(await getUserActivity(userId));
+        }
+        fetchData();
+    },[])
+
+    if ((performanceData && data == 'intensity')) {
         const ACTIVITIES = [
             "Intensité",
             "Vitesse",
@@ -30,7 +33,7 @@ export default function FormatDataApi(data) {
         ];
         const orderedActivitiesInChart = [];
         ACTIVITIES.map((item, index) => {
-            dataintensity.data.map((item1) => {
+            performanceData.data.map((item1) => {
                 if (item1.kind == index+1) {
                     orderedActivitiesInChart.push({
                     activity: item,
@@ -41,14 +44,9 @@ export default function FormatDataApi(data) {
         })
         return orderedActivitiesInChart
     } 
-    else if (data == 'session') {
-        getUserAverageSessions().find(item => {
-            if (userId == item.userId) {
-                datasession = item
-                return datasession
-            }
-        })  
-        let data1 = datasession.sessions.map(item => {
+    else if (averageSessions && data == 'session') {
+        let arrayAverage = [];
+        averageSessions.sessions.map(item => {
             if (item.day == 1) {
                 return item.day = item.day.toString().replace('1', "L")
             } else if (item.day == 2) {
@@ -64,31 +62,17 @@ export default function FormatDataApi(data) {
             } else if (item.day == 7) {
                 return item.day = item.day.toString().replace('7', "D")
             }
-            return item
+            return arrayAverage.push(item);
         });
-        return data1
+        return arrayAverage
     } 
-    else if (data =='home') {
-        getUserMainData().find(item => {
-            if (userId == item.id) {
-                datahome = item
-                return datahome
-            }
-        })
-        return datahome
-    } 
-    else if (data = 'activity') {
-        getUserActivity().find(item => {
-            if (userId == item.userId) {
-                dataActivity = item
-                return dataActivity
-            }
-        })    
-        let newdataActivity = dataActivity.sessions.map(item => {
+    else if (activityData && data == 'activity') {  
+        let arrayActivity = [];
+        activityData.sessions.map(item => {
           let day = item.day.replace('2020-', "");
           item.day = day
-          return item 
-        })
-        return newdataActivity;
-    }
+          return arrayActivity.push(item) 
+        });
+        return arrayActivity;
+    } 
 }

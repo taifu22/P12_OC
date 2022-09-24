@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Energy(props) {
     return (
@@ -11,7 +12,14 @@ function Energy(props) {
                 <p>{props.item}</p>
             </div> 
         </div>
-    );
+    ); 
 }
 
 export default Energy;
+
+Energy.propTypes = {
+    image: PropTypes.string.isRequired,
+    item: PropTypes.string.isRequired,
+    bgColor: PropTypes.string.isRequired,
+    data: PropTypes.string.isRequired
+}

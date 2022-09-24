@@ -1,41 +1,12 @@
 import React, { PureComponent } from 'react';
+import { useState,useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-//import {getUserAverageSessions} from '../dataApi';
 import FormatDataApi from '../formatDataApi';
-//import { useParams } from 'react-router-dom';
 
-function Session() {
+function Session() { 
 
-    // let {userId} = useParams();
-
-    // if (userId === undefined) {
-    //     userId = 12;
-    // }
     let data = FormatDataApi('session');
-    // let data = getUserAverageSessions().find(item => {
-    //     if (userId == item.userId) {
-    //         return item
-    //     }
-    // })  
-
-    // let data1 = data.sessions.map(item => {
-    //     if (item.day == 1) {
-    //         return item.day = item.day.toString().replace('1', "L")
-    //     } else if (item.day == 2) {
-    //         return item.day = item.day.toString().replace('2', "M")
-    //     } else if (item.day == 3) {
-    //         return item.day = item.day.toString().replace('3', "M")
-    //     } else if (item.day == 4) {
-    //         return item.day = item.day.toString().replace('4', "J")
-    //     } else if (item.day == 5) {
-    //         return item.day = item.day.toString().replace('5', "V")
-    //     } else if (item.day == 6) {
-    //         return item.day = item.day.toString().replace('6', "S")
-    //     } else if (item.day == 7) {
-    //         return item.day = item.day.toString().replace('7', "D")
-    //     }
-    //     return item
-    // });
+    //console.log(data);
 
     function CustomTooltip({active, payload}) {
         if (active && payload) {
@@ -44,7 +15,7 @@ function Session() {
                     <p>{`${payload[0].value} min`}</p>
                 </div>
             )
-        }
+        } 
         return null;
     }
 
@@ -57,7 +28,7 @@ function Session() {
     }
 
     return (
-        <div className='div-session'>
+        data != undefined && <div className='div-session'>
         <p className='p-session'>Durée moyenne des sessions</p>
             <ResponsiveContainer width="100%" height="100%">
                 <LineChart

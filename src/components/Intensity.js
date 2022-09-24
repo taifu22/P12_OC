@@ -1,41 +1,11 @@
 import React from 'react';
 import FormatDataApi from '../formatDataApi';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
-//import { useParams } from 'react-router-dom';
 
 function Intensity() {
 
-    // let {userId} = useParams();
-
-    // if (userId === undefined) {
-    //     userId = 12;
-    // }
-
-    let data = FormatDataApi('intensity')
-    
-    // const ACTIVITIES = [
-    //     "Intensité",
-    //     "Vitesse",
-    //     "Force", 
-    //     "Endurance",
-    //     "Energie",
-    //     "Cardio",
-    // ];
-
-    // const orderedActivitiesInChart = [];
-
-    // ACTIVITIES.map((item, index) => {
-    //     data.data.map((item1) => {
-    //         if (item1.kind == index+1) {
-    //             orderedActivitiesInChart.push({
-    //             activity: item,
-    //             value: item1.value,
-    //             });
-    //         }
-    //     })
-    // })
-
-   //console.log(orderedActivitiesInChart);
+    let data = FormatDataApi('intensity');
+    //console.log(data);
 
     return (
         <div className='div-intensity'>
@@ -45,7 +15,7 @@ function Intensity() {
                     outerRadius={window.innerWidth > 1340 ? "80%" : "60%"}
                     >
                     <PolarGrid radialLines={false} />
-                    <PolarAngleAxis
+                    <PolarAngleAxis 
                         dataKey="activity"
                         stroke="white"
                         dy={4}

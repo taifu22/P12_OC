@@ -1,6 +1,5 @@
-import React, { PureComponent } from 'react';
-import { useState,useEffect } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import React from 'react';
+import { LineChart, Line, XAxis, YAxis, Rectangle, Tooltip, ResponsiveContainer } from 'recharts';
 import FormatDataApi from '../formatDataApi';
 
 function Session() { 
@@ -15,16 +14,22 @@ function Session() {
                     <p>{`${payload[0].value} min`}</p>
                 </div>
             )
-        } 
+        }  
         return null;
     }
 
-    function CustomizedCursor() {
-        return(
-            <div className='div-cursor-tooltip'>
-                 <p>ciao</p>
-            </div>
-        )
+    function CustomizedCursor({points, width}) {
+        const X = points[0].x;
+        const Y = points[0].y;
+        return (
+            <Rectangle
+              width={width+20}
+              height={300}
+              x={X}
+              y={Y-70}
+              style={{ background: "red", opacity: 0.1 }}
+            />
+          );
     }
 
     return (
@@ -61,7 +66,7 @@ function Session() {
                     content={<CustomTooltip />}
                     // cursor={{
                     // stroke: "rgba(0, 0, 0, 0.1)",
-                    // strokeWidth: 100,
+                    // strokeWidth: 25,
                     // }}
                     cursor={<CustomizedCursor />}
                     wrapperStyle={{outline:'none'}}

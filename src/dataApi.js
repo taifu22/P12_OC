@@ -9,7 +9,7 @@ let getDataBackEnd = async (url) => {
       return res;
     } catch (error) {
       if (error) {
-        return false;
+        return false; 
       }
     }
 }

@@ -1,3 +1,9 @@
+/**
+ * @file Home.js is the Home of application with all charts
+ * @author Chahouat Taoufik 
+ * @see <a href="https://github.com/taifu22/P12_OC/blob/master/src/pages/Home.js">Répo GitHub</a>
+ */
+
 import React from 'react';
 import Activity from '../components/Activity';
 import Session from '../components/Session';

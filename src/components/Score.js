@@ -1,3 +1,9 @@
+/**
+ * @file Score.js is the file that contains the component with score chart
+ * @author Chahouat Taoufik 
+ * @see <a href="https://github.com/taifu22/P12_OC/blob/master/src/components/Score.js">Répo GitHub</a>
+ */
+
 import React from 'react'; 
 import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
 import PropTypes from 'prop-types';

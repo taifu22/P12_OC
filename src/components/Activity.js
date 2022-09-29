@@ -1,3 +1,9 @@
+/**
+ * @file Activity.js is the file that contains the component with activity chart
+ * @author Chahouat Taoufik 
+ * @see <a href="https://github.com/taifu22/P12_OC/blob/master/src/components/Activity.js">Répo GitHub</a>
+ */
+
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import FormatDataApi from '../formatDataApi';

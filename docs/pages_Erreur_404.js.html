@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: App.js</title>
+    <title>JSDoc: Source: pages/Erreur_404.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: App.js</h1>
+    <h1 class="page-title">Source: pages/Erreur_404.js</h1>
 
     
 
@@ -27,41 +27,29 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @file App.js this is the file that groups all the other components and pages of the project, and contains the router
+ * @file Erreur_404.js is the page that display if number of user doesn't exist
  * @author Chahouat Taoufik 
- * @see &lt;a href="https://github.com/taifu22/P12_OC/blob/master/src/App.js">Répo GitHub&lt;/a>
+ * @see &lt;a href="https://github.com/taifu22/P12_OC/blob/master/src/pages/Erreur_404.js">Répo GitHub&lt;/a>
  */
-import './styles/style.scss';
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
-import NavBar from './components/NavBar';
-import Home from './pages/Home';
-import Erreur_404 from './pages/Erreur_404';
-import NavBar2 from './components/NavBar2';
 
-function App() {
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-  /**
-   * variable that stores the number of the user
-   * @type {string}
-   */
-  let dataUser = '/:userId';
+function Erreur_404() {
+    return (
+        &lt;div className='erreur-404'>
+            &lt;div className='erreur-404-container'>
+                &lt;p className='p-404'>404&lt;/p>
+                &lt;p className='p-404-text'>Oups! La page que vous demandez n'existe pas.&lt;/p>
+            &lt;/div>
+            &lt;div className='back-to-home'> 
+                 &lt;Link style={{color:'#132344' , textDecoration:'none'}} to="/">Retourner sur la page d'accueil&lt;/Link>
+            &lt;/div>
+        &lt;/div> 
+    );
+}
 
-  return (
-    &lt;div style={{position:'relative'}} className="App">
-      &lt;NavBar />
-      &lt;BrowserRouter> 
-      &lt;NavBar2 />
-          &lt;Routes>
-              &lt;Route path={'/'} exact element={&lt;Home />}/>
-              &lt;Route path={dataUser} exact element={&lt;Home />}/>
-              &lt;Route path='*' element={&lt;Erreur_404 />}/> 
-          &lt;/Routes>
-        &lt;/BrowserRouter>  
-    &lt;/div>
-  );
-} 
-
-export default App;
+export default Erreur_404;
 </code></pre>
         </article>
     </section>

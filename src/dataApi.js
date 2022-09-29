@@ -1,3 +1,8 @@
+/**
+ * @file dataApi.js is the file for call data backend, or mock if back offline
+ * @author Chahouat Taoufik 
+ * @see <a href="https://github.com/taifu22/P12_OC/blob/master/src/dataApi.js">Répo GitHub</a>
+ */
 import { USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE } from './data'; 
 import axios from 'axios';
 

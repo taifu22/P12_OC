@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: App.js</title>
+    <title>JSDoc: Source: components/NavBar2.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: App.js</h1>
+    <h1 class="page-title">Source: components/NavBar2.js</h1>
 
     
 
@@ -27,42 +27,40 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @file App.js this is the file that groups all the other components and pages of the project, and contains the router
+ * @file NavBar2.js is the file that contains the component to disply the navbar in the top
  * @author Chahouat Taoufik 
- * @see &lt;a href="https://github.com/taifu22/P12_OC/blob/master/src/App.js">Répo GitHub&lt;/a>
+ * @see &lt;a href="https://github.com/taifu22/P12_OC/blob/master/src/components/NavBar2.js">Répo GitHub&lt;/a>
  */
-import './styles/style.scss';
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
-import NavBar from './components/NavBar';
-import Home from './pages/Home';
-import Erreur_404 from './pages/Erreur_404';
-import NavBar2 from './components/NavBar2';
 
-function App() {
+import React from 'react';
+import menu1 from '../assets/menu1.png';
+import menu2 from '../assets/menu2.png';
+import menu3 from '../assets/menu3.png';
+import menu4 from '../assets/menu4.png';
 
-  /**
-   * variable that stores the number of the user
-   * @type {string}
-   */
-  let dataUser = '/:userId';
+function NavBar2() {
+    return (
+        &lt;div className='navbar-menu'>
+                &lt;div className='menus-navbar'>
+                    &lt;div className='menu-nav'>
+                        &lt;img src={menu1}>&lt;/img>
+                    &lt;/div>
+                    &lt;div className='menu-nav'>
+                        &lt;img src={menu2}>&lt;/img>
+                    &lt;/div>
+                    &lt;div className='menu-nav'>
+                        &lt;img src={menu3}>&lt;/img>
+                    &lt;/div>
+                    &lt;div className='menu-nav'>
+                        &lt;img src={menu4}>&lt;/img>
+                    &lt;/div>
+                &lt;/div>
+                &lt;p>Copyright SportSee 2020&lt;/p>
+            &lt;/div>
+    );
+}
 
-  return (
-    &lt;div style={{position:'relative'}} className="App">
-      &lt;NavBar />
-      &lt;BrowserRouter> 
-      &lt;NavBar2 />
-          &lt;Routes>
-              &lt;Route path={'/'} exact element={&lt;Home />}/>
-              &lt;Route path={dataUser} exact element={&lt;Home />}/>
-              &lt;Route path='*' element={&lt;Erreur_404 />}/> 
-          &lt;/Routes>
-        &lt;/BrowserRouter>  
-    &lt;/div>
-  );
-} 
-
-export default App;
-</code></pre>
+export default NavBar2;</code></pre>
         </article>
     </section>
 

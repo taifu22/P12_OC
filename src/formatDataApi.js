@@ -1,3 +1,9 @@
+/**
+ * @file formatDataApi.js is the file for format data (mock or Backend)
+ * @author Chahouat Taoufik 
+ * @see <a href="https://github.com/taifu22/P12_OC/blob/master/src/formatDataApi.js">Répo GitHub</a>
+ */
+
 import {getUserPerformance, getUserAverageSessions, getUserActivity} from './dataApi';
 import { useParams } from 'react-router-dom'; 
 import { useEffect } from 'react';

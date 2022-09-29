@@ -1,3 +1,9 @@
+/**
+ * @file NavBar.js is the file that contains the component to disply the navbar in the top
+ * @author Chahouat Taoufik 
+ * @see <a href="https://github.com/taifu22/P12_OC/blob/master/src/components/NavBar.js">Répo GitHub</a>
+ */
+
 import React from 'react';
 import logo from '../assets/Logo.png';
 

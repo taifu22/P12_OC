@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: App.js</title>
+    <title>JSDoc: Source: components/Energy.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: App.js</h1>
+    <h1 class="page-title">Source: components/Energy.js</h1>
 
     
 
@@ -27,42 +27,36 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @file App.js this is the file that groups all the other components and pages of the project, and contains the router
+ * @file Energy.js is the file that contains the component to disply energy's data
  * @author Chahouat Taoufik 
- * @see &lt;a href="https://github.com/taifu22/P12_OC/blob/master/src/App.js">Répo GitHub&lt;/a>
+ * @see &lt;a href="https://github.com/taifu22/P12_OC/blob/master/src/components/Session.js">Répo GitHub&lt;/a>
  */
-import './styles/style.scss';
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
-import NavBar from './components/NavBar';
-import Home from './pages/Home';
-import Erreur_404 from './pages/Erreur_404';
-import NavBar2 from './components/NavBar2';
 
-function App() {
+import React from 'react';
+import PropTypes from 'prop-types';
 
-  /**
-   * variable that stores the number of the user
-   * @type {string}
-   */
-  let dataUser = '/:userId';
+function Energy(props) {
+    return (
+        &lt;div className='div-energy'>
+            &lt;div className='image-energy' style={{backgroundColor:props.bgColor}}>
+                &lt;img src={props.image}>&lt;/img>
+            &lt;/div>
+            &lt;div className='infos-energy'>
+                &lt;p className='p-bold'>{props.data}&lt;/p>
+                &lt;p>{props.item}&lt;/p>
+            &lt;/div> 
+        &lt;/div>
+    ); 
+}
 
-  return (
-    &lt;div style={{position:'relative'}} className="App">
-      &lt;NavBar />
-      &lt;BrowserRouter> 
-      &lt;NavBar2 />
-          &lt;Routes>
-              &lt;Route path={'/'} exact element={&lt;Home />}/>
-              &lt;Route path={dataUser} exact element={&lt;Home />}/>
-              &lt;Route path='*' element={&lt;Erreur_404 />}/> 
-          &lt;/Routes>
-        &lt;/BrowserRouter>  
-    &lt;/div>
-  );
-} 
+export default Energy;
 
-export default App;
-</code></pre>
+Energy.propTypes = {
+    image: PropTypes.string.isRequired,
+    item: PropTypes.string.isRequired,
+    bgColor: PropTypes.string.isRequired,
+    data: PropTypes.string.isRequired
+}</code></pre>
         </article>
     </section>
 

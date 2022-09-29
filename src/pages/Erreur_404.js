@@ -1,3 +1,9 @@
+/**
+ * @file Erreur_404.js is the page that display if number of user doesn't exist
+ * @author Chahouat Taoufik 
+ * @see <a href="https://github.com/taifu22/P12_OC/blob/master/src/pages/Erreur_404.js">Répo GitHub</a>
+ */
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 

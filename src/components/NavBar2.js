@@ -1,3 +1,9 @@
+/**
+ * @file NavBar2.js is the file that contains the component to disply the navbar in the top
+ * @author Chahouat Taoufik 
+ * @see <a href="https://github.com/taifu22/P12_OC/blob/master/src/components/NavBar2.js">Répo GitHub</a>
+ */
+
 import React from 'react';
 import menu1 from '../assets/menu1.png';
 import menu2 from '../assets/menu2.png';

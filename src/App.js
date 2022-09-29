@@ -1,3 +1,8 @@
+/**
+ * @file App.js this is the file that groups all the other components and pages of the project, and contains the router
+ * @author Chahouat Taoufik 
+ * @see <a href="https://github.com/taifu22/P12_OC/blob/master/src/App.js">Répo GitHub</a>
+ */
 import './styles/style.scss';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import NavBar from './components/NavBar';

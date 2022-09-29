@@ -11,7 +11,7 @@
     display: flex;
     .image-energy { 
         width: 80px;
-        height: 80px;
+        height: auto;
         margin-right: 25px;
         display: flex;
         justify-content: center;
@@ -25,6 +25,7 @@
             line-height: 24px;
             margin: 0;
             margin-top: 20px;
+            width: 68px;
         }
         p {
             margin: 0;

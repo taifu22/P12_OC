@@ -4,7 +4,11 @@ import PropTypes from 'prop-types';
 
 function Score(props) {
 
-    //console.log(props.data);
+    /**
+     * constant with the values to display the pie in the chart
+     * @constant
+     * @type {array}
+     */
     const pieData = [
         { name: "completed", value: (props.data.todayScore ? props.data.todayScore : props.data.score), fillColor: "#ff0101" },
         { name: "not-completed", value: 1 - (props.data.todayScore ? props.data.todayScore : props.data.score), fillColor: "transparent" },
@@ -41,10 +45,9 @@ function Score(props) {
                 <br />
             </div>
         </div>
-    );
+    ); 
 }
 
-//Score.proptypes
 export default Score;
 
 Score.propTypes = {

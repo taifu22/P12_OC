@@ -4,9 +4,18 @@ import FormatDataApi from '../formatDataApi';
 
 function Session() { 
 
+    /**
+     * variable stores the backend or mock data concerning the user
+     * @type {Object}
+     */ 
     let data = FormatDataApi('session');
-    //console.log(data);
 
+    /**
+     * Function to display the tooltip
+     * @param {boolean} param0 if param true the tooltip is displayed
+     * @param {{number}} param1 value to display the minutes
+     * @returns return the div to display the tooltip
+     */
     function CustomTooltip({active, payload}) {
         if (active && payload) {
             return(
@@ -18,6 +27,12 @@ function Session() {
         return null;
     }
 
+    /**
+     * Function to display the rectangle opacity
+     * @param {Array} param0 array with the values of points x and y to display the rectangle opacity
+     * @param {number} param1 value of width
+     * @returns return the component to display the rectangle opacity
+     */
     function CustomizedCursor({points, width}) {
         const X = points[0].x;
         const Y = points[0].y;
@@ -44,7 +59,6 @@ function Session() {
                         left: 15,
                         bottom: 25,
                     }}
-                    //outerRadius="75%"
                 >
                 <XAxis 
                     dataKey="day"
@@ -64,10 +78,6 @@ function Session() {
                 />
                 <Tooltip
                     content={<CustomTooltip />}
-                    // cursor={{
-                    // stroke: "rgba(0, 0, 0, 0.1)",
-                    // strokeWidth: 25,
-                    // }}
                     cursor={<CustomizedCursor />}
                     wrapperStyle={{outline:'none'}}
                 />

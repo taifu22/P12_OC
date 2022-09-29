@@ -20,10 +20,25 @@ function Home() {
     if (userId === undefined) {
         userId = 12;
     }
+
+    /**
+     * variable that store the data of the user
+     * @type {Array}
+     */
     const [data1, setData1] = useState()
+
+    /**
+     * variable that show a 404 page if the userId doesn't exist
+     * @type {string}
+     */
     let data2;
 
     useEffect(()=>{
+        /**
+         * Function that call data from file dataApi.js
+         * @async 
+         * @returns {Promise<Object>} return the user's data
+         */
         async function fetchData() {
             setData1(await getUserMainData(userId))
         }

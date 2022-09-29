@@ -229,7 +229,7 @@ body {
 }
 .div-energy .image-energy {
   width: 80px;
-  height: 80px;
+  height: auto;
   margin-right: 25px;
   display: flex;
   justify-content: center;
@@ -242,6 +242,7 @@ body {
   line-height: 24px;
   margin: 0;
   margin-top: 20px;
+  width: 68px;
 }
 .div-energy .infos-energy p {
   margin: 0;

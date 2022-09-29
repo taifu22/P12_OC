@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/Activity.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/Activity.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from 'react';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import FormatDataApi from '../formatDataApi';
+
+export default function Activity() {
+
+      /**
+      * variable stores the backend or mock data concerning the user
+      * @type {Object}
+      */ 
+      let data = FormatDataApi('activity');
+
+     /**
+     * Function to display the tooltip
+     * @param {boolean} param0 if param true the tooltip is displayed
+     * @param {array} param1 array with values to display the kg or kCal
+     * @returns return the div to display the tooltip
+     */
+      function CustomTooltip({active, payload}) { 
+        if (active &amp;&amp; payload) {
+          return ( 
+            &lt;div className='tooltip'>
+              &lt;div className='tooltip-red'>
+                {`${payload[0].value} kg`} 
+              &lt;/div>
+              &lt;div className='tooltip-red'>
+                {`${payload[1].value} kCal`}
+              &lt;/div>
+            &lt;/div>
+          ); 
+        }
+       
+        return null;
+      }
+
+    return (
+        &lt;div className='div-activity'> 
+            &lt;header> 
+                &lt;p>&lt;b>Activité quotidienne&lt;/b>&lt;/p>
+                &lt;ul>
+                    &lt;li>&lt;div className='red-li'>&lt;/div>Poids {'(kg)'}&lt;/li>
+                    &lt;li>&lt;div className='black-li'>&lt;/div>Calories brulèes {'(kCal)'}&lt;/li>
+                &lt;/ul>
+            &lt;/header> 
+            &lt;ResponsiveContainer width="95%" height="70%">
+                &lt;BarChart
+                  data={data}
+                  margin={{
+                    top: 5,
+                    right: 20,
+                    left: 20,
+                    bottom: 5,
+                  }}
+                  barGap={8}
+                  barCategoryGap="35%"
+                >
+                &lt;CartesianGrid strokeDasharray="3 3" vertical={false} />
+                &lt;XAxis
+                  dataKey="day"
+                  dy={10}
+                  padding={{ left: -30, right: -30 }}
+                  //stroke={`${styleVar.neutral400}`}
+                  tickLine={false}
+                  tick={{ fontSize: 14, fontWeight: 500 }}
+                />
+                &lt;YAxis
+                  yAxisId="kg"
+                  dataKey="kilogram"
+                  domain={["dataMin - 1", "dataMax + 2"]}
+                  allowDecimals={false}
+                  dx={48}
+                  orientation="right"
+                  //stroke={`${styleVar.neutral400}`}
+                  axisLine={false}
+                  tickLine={false}
+                />
+                &lt;YAxis
+                  yAxisId="cal"
+                  dataKey="calories"
+                  domain={[0, "dataMax + 50"]}
+                  hide={true}
+                />
+                &lt;Bar
+                  yAxisId="kg"
+                  dataKey="kilogram"
+                  maxBarSize={8}
+                  fill="black"
+                  radius={[50, 50, 0, 0]}
+                />
+                &lt;Bar
+                  yAxisId="cal"
+                  dataKey="calories"
+                  maxBarSize={8}
+                  fill="red"
+                  radius={[50, 50, 0, 0]}
+                />
+                &lt;Tooltip
+                  content={&lt;CustomTooltip />}
+                  cursor={{
+                    fill: "rgba(0, 0, 0, 0.1)",
+                  }}
+                  wrapperStyle={{outline:'none'}}
+                />
+                &lt;/BarChart>
+            &lt;/ResponsiveContainer>
+        &lt;/div>
+    );
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-formatDataApi.html">formatDataApi</a></li></ul><h3>Global</h3><ul><li><a href="global.html#dataMock">dataMock</a></li><li><a href="global.html#getData">getData</a></li><li><a href="global.html#getDataBackEnd">getDataBackEnd</a></li><li><a href="global.html#getUserActivity">getUserActivity</a></li><li><a href="global.html#getUserAverageSessions">getUserAverageSessions</a></li><li><a href="global.html#getUserMainData">getUserMainData</a></li><li><a href="global.html#getUserPerformance">getUserPerformance</a></li><li><a href="global.html#userActivity">userActivity</a></li><li><a href="global.html#userAverageSession">userAverageSession</a></li><li><a href="global.html#userMainData">userMainData</a></li><li><a href="global.html#userPerformance">userPerformance</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Thu Sep 29 2022 07:35:39 GMT+0200 (heure d’été d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

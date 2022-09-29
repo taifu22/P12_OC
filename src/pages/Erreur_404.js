@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Erreur_404(props) {
+function Erreur_404() {
     return (
         <div className='erreur-404'>
             <div className='erreur-404-container'>
@@ -11,7 +11,7 @@ function Erreur_404(props) {
             <div className='back-to-home'> 
                  <Link style={{color:'#132344' , textDecoration:'none'}} to="/">Retourner sur la page d'accueil</Link>
             </div>
-        </div>
+        </div> 
     );
 }
 

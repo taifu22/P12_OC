@@ -6,7 +6,13 @@ import Erreur_404 from './pages/Erreur_404';
 import NavBar2 from './components/NavBar2';
 
 function App() {
+
+  /**
+   * variable that stores the number of the user
+   * @type {string}
+   */
   let dataUser = '/:userId';
+
   return (
     <div style={{position:'relative'}} className="App">
       <NavBar />

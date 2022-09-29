@@ -4,7 +4,7 @@ import menu2 from '../assets/menu2.png';
 import menu3 from '../assets/menu3.png';
 import menu4 from '../assets/menu4.png';
 
-function NavBar2(props) {
+function NavBar2() {
     return (
         <div className='navbar-menu'>
                 <div className='menus-navbar'>

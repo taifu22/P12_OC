@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../assets/Logo.png';
 
-function NavBar(props) {
+function NavBar() {
     return (
         <div className='div-navbar'>
             <div className='navbar-list'>

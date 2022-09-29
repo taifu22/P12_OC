@@ -4,8 +4,11 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } fro
 
 function Intensity() {
 
+    /**
+     * variable stores the backend or mock data concerning the user
+     * @type {Object}
+     */ 
     let data = FormatDataApi('intensity');
-    //console.log(data);
 
     return (
         <div className='div-intensity'>

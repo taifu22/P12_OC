@@ -1,12 +1,21 @@
 import React from 'react';
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import FormatDataApi from '../formatDataApi';
 
 export default function Activity() {
 
+      /**
+      * variable stores the backend or mock data concerning the user
+      * @type {Object}
+      */ 
       let data = FormatDataApi('activity');
-      //console.log(data);
 
+     /**
+     * Function to display the tooltip
+     * @param {boolean} param0 if param true the tooltip is displayed
+     * @param {array} param1 array with values to display the kg or kCal
+     * @returns return the div to display the tooltip
+     */
       function CustomTooltip({active, payload}) { 
         if (active && payload) {
           return ( 
@@ -20,7 +29,7 @@ export default function Activity() {
             </div>
           ); 
         }
-      
+       
         return null;
       }
 
@@ -97,5 +106,3 @@ export default function Activity() {
         </div>
     );
 }
-
-//export default Activity;

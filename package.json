@@ -18,7 +18,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "doc" : "jsdoc -c jsdoc.json"
+    "doc": "jsdoc -c jsdoc.json",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -39,6 +41,8 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "jsdoc": "^3.6.11"
-  }
+  },
+  "homepage": "https://taifu22.github.io/P12_OC/"
 }

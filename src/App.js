@@ -6,7 +6,7 @@
 import './styles/style.scss';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar';
-import Home from './pages/Home';
+import Home from './pages/Home'; 
 import Erreur_404 from './pages/Erreur_404';
 import NavBar2 from './components/NavBar2';
 

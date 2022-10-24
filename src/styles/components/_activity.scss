@@ -11,7 +11,7 @@
         justify-content: space-between; 
         margin-left: 20px; 
         margin-right: 20px;
-        margin-bottom: 20px;
+        margin-bottom: 20px; 
         ul {
             width: 37%;
             list-style: none;
@@ -23,7 +23,7 @@
                     width: 10px;
                     height: 10px;
                     border-radius: 5px;
-                    background-color: black;
+                    background-color: red;
                     margin-right: 8px;
                     margin-top: 4px;
                 }
@@ -31,7 +31,7 @@
                     width: 10px;
                     height: 10px;
                     border-radius: 5px;
-                    background-color: red;
+                    background-color: black;
                     margin-right: 8px;
                     margin-top: 4px;
                 }
@@ -51,5 +51,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .div-activity {
+        display: none;
     }
 }

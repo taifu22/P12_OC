@@ -2,3 +2,10 @@
     @include component;
     background-color: #2b2d30;
 }
+
+@media screen and (max-width: 480px){
+    .div-intensity {
+        margin-top: 10px;
+        width: 90%;
+    }
+}

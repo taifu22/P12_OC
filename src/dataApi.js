@@ -62,7 +62,7 @@ async function getData() {
         dataMock = true
     }   
 }
-getData();
+getData(); 
 
 /**
  * Function for call back's data or mock's data of the user

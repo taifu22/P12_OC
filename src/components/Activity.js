@@ -44,9 +44,9 @@ export default function Activity() {
             <header> 
                 <p><b>Activité quotidienne</b></p>
                 <ul>
-                    <li><div className='red-li'></div>Poids {'(kg)'}</li>
-                    <li><div className='black-li'></div>Calories brulèes {'(kCal)'}</li>
-                </ul>
+                    <li><div className='black-li'></div>Poids {'(kg)'}</li>
+                    <li><div className='red-li'></div>Calories brulèes {'(kCal)'}</li>
+                </ul> 
             </header> 
             <ResponsiveContainer width="95%" height="70%">
                 <BarChart

@@ -20,7 +20,7 @@ import {getUserMainData} from '../dataApi';
 import { useEffect } from 'react';
 import { useState } from 'react';
  
-function Home() {
+function Home() { 
 
     let {userId} = useParams();
     if (userId === undefined) {
@@ -71,7 +71,7 @@ function Home() {
                     <Intensity />
                     <Score data={data1} />
                 </div>
-            </div>
+            </div> 
             <div className='div-home-right'>
                 <Energy image={fire} item={'Calories'} bgColor={'rgb(255, 0, 0, 0.1)'} data={data1.keyData.calorieCount+'kcal'} />
                 <Energy image={chicken} item={'Proteines'} bgColor={'rgba(74, 184, 255, 0.1)'} data={data1.keyData.proteinCount+'g'}/>

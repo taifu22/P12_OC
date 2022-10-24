@@ -4,7 +4,7 @@
  * @see <a href="https://github.com/taifu22/P12_OC/blob/master/src/App.js">Répo GitHub</a>
  */
 import './styles/style.scss';
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Home from './pages/Home';
 import Erreur_404 from './pages/Erreur_404';
@@ -26,7 +26,7 @@ function App() {
           <Routes>
               <Route path={'/'} exact element={<Home />}/>
               <Route path={dataUser} exact element={<Home />}/>
-              <Route path='*' element={<Erreur_404 />}/> 
+              <Route path={'*'} element={<Erreur_404 />}/> 
           </Routes>
         </BrowserRouter>  
     </div>

@@ -2,6 +2,7 @@
     width: auto;
     height: 80px;
     background: #FBFBFB;
+    //background: grey;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
     margin-bottom:20px;
     font-family: 'Roboto';
@@ -44,6 +45,38 @@
         .infos-energy {
             .p-bold {
                 width: 68px;
+            }
+        }
+    } 
+}
+
+@media screen and (max-width: 480px){
+    .div-energy {
+        width: 100%;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 700px) and (min-width:481px){
+    .div-energy {
+        width: 90px;
+        height: 40px;
+        margin-right: 10px;
+        margin-left: 10px;
+        .image-energy {
+            width: 35px;
+            height: 35px;
+            margin-right: 15px;
+        }
+        .infos-energy {
+            .p-bold {
+                margin-top: 0;
+                width: 40px;
+                font-size: small;
+            }
+            p {
+                font-size: small;
             }
         }
     }

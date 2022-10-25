@@ -4,7 +4,7 @@
  * @see <a href="https://github.com/taifu22/P12_OC/blob/master/src/components/Session.js">Répo GitHub</a>
  */
 
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { LineChart, Line, XAxis, YAxis, Rectangle, Tooltip, ResponsiveContainer } from 'recharts';
 import FormatDataApi from '../formatDataApi';
 
@@ -15,7 +15,7 @@ function Session() {
      * @type {Object}
      */ 
     let data = FormatDataApi('session'); 
-    let data1;
+    console.log(data);
 
     /**
      * Function to display the tooltip

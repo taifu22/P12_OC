@@ -25,7 +25,7 @@ export default function FormatDataApi(data) {
      */
     let orderedActivitiesInChart = [];
 
-    /**
+    /** 
      * variable that store the data session ordered
      * @type {Array}
      */
@@ -98,6 +98,7 @@ export default function FormatDataApi(data) {
             return arrayAverage.push(item);
         });
         return arrayAverage
+        //return averageSessions
     } 
     else if (activityData && data == 'activity') {  
         activityData.sessions.map(item => {

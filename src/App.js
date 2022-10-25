@@ -14,7 +14,7 @@ function App() {
 
   /**
    * variable that stores the number of the user
-   * @type {string}
+   * @type {string} 
    */
   let dataUser = '/:userId';
 

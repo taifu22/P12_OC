@@ -11,6 +11,9 @@ body {
   }
 }
 
+.div-navbar .navbar-responsive {
+  display: none;
+}
 .div-navbar .navbar-list {
   height: 91px;
   width: 100%;
@@ -20,7 +23,7 @@ body {
 .div-navbar .navbar-list img {
   width: auto;
 }
-.div-navbar .navbar-list ul {
+.div-navbar .navbar-list .ul-desktop {
   color: white;
   list-style: none;
   display: flex;
@@ -33,20 +36,48 @@ body {
   font-size: 24px;
   line-height: 24px;
 }
-.div-navbar .navbar-list ul li {
+.div-navbar .navbar-list .ul-desktop li {
   cursor: pointer;
 }
 
 @media screen and (max-width: 480px) {
   .div-navbar .navbar-list {
+    display: none;
+  }
+  .div-navbar .navbar-responsive {
+    position: relative;
     height: 60px;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .div-navbar .navbar-responsive i {
+    color: white;
+    margin-right: 25px;
+    font-size: 20px;
+  }
+  .div-navbar .navbar-responsive .ul-responsive {
+    position: absolute;
+    margin-top: 100px;
+    background-color: black;
+    color: white;
+    right: 0;
+    top: -50px;
+    list-style: none;
+    z-index: 1;
+  }
+  .div-navbar .navbar-responsive .ul-responsive li {
+    margin: 10px;
+    cursor: pointer;
   }
 }
 @media screen and (max-width: 700px) and (min-width: 481px) {
   .div-navbar .navbar-list {
     height: 60px;
   }
-  .div-navbar .navbar-list ul {
+  .div-navbar .navbar-list .ul-desktop {
     font-size: 20px;
   }
 }

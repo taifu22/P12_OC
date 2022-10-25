@@ -14,7 +14,8 @@ function Session() {
      * variable stores the backend or mock data concerning the user
      * @type {Object}
      */ 
-    let data = FormatDataApi('session');
+    let data = FormatDataApi('session'); 
+    let data1;
 
     /**
      * Function to display the tooltip

@@ -7,15 +7,30 @@
 import React, {useState, useEffect} from 'react';
 import { LineChart, Line, XAxis, YAxis, Rectangle, Tooltip, ResponsiveContainer } from 'recharts';
 import FormatDataApi from '../formatDataApi';
+import { useParams } from 'react-router-dom'; 
 
 function Session() { 
+
+    let {userId} = useParams();
 
     /**
      * variable stores the backend or mock data concerning the user
      * @type {Object}
      */ 
-    let data = FormatDataApi('session'); 
-    console.log(data);
+    //let data = FormatDataApi('session');  
+    //console.log(data);
+    let data;
+    if (userId == 12 || " ") {
+        data = [
+                    {day: 1, sessionLength: 30},
+                    {day: 2, sessionLength: 23},
+                    {day: 3, sessionLength: 45},
+                    {day: 4, sessionLength: 50},
+                    {day: 5, sessionLength: 0},
+                    {day: 6, sessionLength: 0},
+                    {day: 7, sessionLength: 60}
+                ]
+    }
 
     /**
      * Function to display the tooltip

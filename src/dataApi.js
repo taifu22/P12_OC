@@ -10,7 +10,7 @@ import axios from 'axios';
  * variable that passes in true if backend offline
  * @type {boolean}
  */
-let dataMock=false
+let dataMock=false 
  
 /**
  * variable stores the backend or mock data concerning the user

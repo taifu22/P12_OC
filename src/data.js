@@ -144,7 +144,7 @@ const USER_AVERAGE_SESSIONS = [
                 sessionLength: 0
             },
             {
-                day: 7,
+                day: 7, 
                 sessionLength: 60
             }
         ]

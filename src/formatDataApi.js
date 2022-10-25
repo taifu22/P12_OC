@@ -31,7 +31,7 @@ export default function FormatDataApi(data) {
      */
     let arrayAverage = [];
 
-    /**
+    /** 
      * variable that store the data activity ordered
      * @type {Array}
      */
@@ -95,7 +95,7 @@ export default function FormatDataApi(data) {
             } else if (item.day == 7) {
                 return item.day = item.day.toString().replace('7', "D")
             }
-            return arrayAverage.push(item);
+            return arrayAverage.push(item); 
         });
         return arrayAverage
         //return averageSessions

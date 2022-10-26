@@ -22,13 +22,13 @@ function Session() {
     let data;
     if (userId == 12 || " ") {
         data = [
-                    {day: 1, sessionLength: 30},
-                    {day: 2, sessionLength: 23},
-                    {day: 3, sessionLength: 45},
-                    {day: 4, sessionLength: 50},
-                    {day: 5, sessionLength: 0},
-                    {day: 6, sessionLength: 0},
-                    {day: 7, sessionLength: 60}
+                    {day: "L", sessionLength: 30},
+                    {day: "M", sessionLength: 23},
+                    {day: "M", sessionLength: 45},
+                    {day: "J", sessionLength: 50},
+                    {day: "V", sessionLength: 0},
+                    {day: "S", sessionLength: 0},
+                    {day: "D", sessionLength: 60}
                 ]
     }
 

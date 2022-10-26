@@ -28,4 +28,5 @@
 - jsdoc v3.6.11
 - sass v1.54.4
 - eslint v8.21.0
-
+## Deploiment
+https://sportsee1.vercel.app/

@@ -30,6 +30,16 @@ function Session() {
                     {day: "S", sessionLength: 0},
                     {day: "D", sessionLength: 60}
                 ]
+    } else if (userId == 18) {
+        data = [
+                    {day: "L", sessionLength: 40},
+                    {day: "M", sessionLength: 15},
+                    {day: "M", sessionLength: 55},
+                    {day: "J", sessionLength: 0},
+                    {day: "V", sessionLength: 0},
+                    {day: "S", sessionLength: 23},
+                    {day: "D", sessionLength: 51}
+                ]
     }
 
     /**

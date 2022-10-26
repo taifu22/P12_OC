@@ -20,7 +20,8 @@ function Session() {
     //let data = FormatDataApi('session');  
     //console.log(data);
     let data;
-    if (userId == 12 || " ") {
+    if (userId == undefined || userId == "12") {
+        console.log('ici 12');
         data = [
                     {day: "L", sessionLength: 30},
                     {day: "M", sessionLength: 23},
@@ -30,7 +31,7 @@ function Session() {
                     {day: "S", sessionLength: 0},
                     {day: "D", sessionLength: 60}
                 ]
-    } else if (userId == 18) {
+    } else if (userId == "18") {
         data = [
                     {day: "L", sessionLength: 40},
                     {day: "M", sessionLength: 15},
@@ -41,6 +42,7 @@ function Session() {
                     {day: "D", sessionLength: 51}
                 ]
     }
+    console.log(userId);
 
     /**
      * Function to display the tooltip
